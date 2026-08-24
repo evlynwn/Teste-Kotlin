@@ -158,16 +158,16 @@ fun main() {
     numeros1[1] = 50
     println(numeros1[1]) //50
 
-    var numeros3 = arrayOf(1,2,3)
+    //var numeros3 = arrayOf(1,2,3)
 
-    numeros3[2] = 1
-    println(numeros3[3])
+    //numeros3[2] = 1
+    //println(numeros3[3])
 
-    var frutas = listOf("Banana", "Macã", "Macã")
+    //var frutas = listOf("Banana", "Macã", "Macã")
 
-    println(frutas[0])
-    frutas.add("Limão") // Não funciona
-    frutas.remove(2) // Não funciona
+    //println(frutas[0])
+    //frutas.add("Limão") // Não funciona
+    //frutas.remove(2) // Não funciona
 
     var frutas1 = listOf("Banana", "Macã","Macã")
 
@@ -175,6 +175,92 @@ fun main() {
     println(frutas1.first())
     println(frutas1.last())
     println(frutas1.contains("Macã")) // true
+
+    // MutableList0f (Mutável) = permite alteracões, funciona como uma lista comum, tamanho dinâmico
+    var carros = mutableListOf("Corsa", "Celta")
+
+    println(carros.size)
+    println(carros.last())
+    println(carros.add("Fusca"))
+    println(carros.last())
+
+    // Set comum(imutável) = não permite repeticão, não permite a ordem de insercão, acesso de valor por metodo, não permite alteracão
+    //var cores = setOf("Azul", "Verde", "Azul")
+
+    //println(cores)
+    //cores.add("Amarelo")
+    //cores.remove("Verde") // não funciona
+
+    val cores1 = mutableListOf("Azul", "Verde", "Azul")
+
+    cores1.add("Amarelo")
+    cores1.add("Azul")
+    cores1.remove("Verde")
+    println(cores1)
+
+    val pessoas = mapOf(
+        "Samuel" to 17,
+        "Evie" to 18
+    )
+    println(pessoas["Samuel"]) //17
+    println(pessoas["Evellyn"])
+    //pessoas["Evie"] = 18 não funciona
+
+    val produtos = mutableMapOf(
+        "pc" to "computador",
+        "cl" to "celular"
+    )
+    println(produtos["pc"]) //computador
+    produtos["ms"] = "mouse"
+    produtos.remove("pc")
+    println(produtos) //{cl=celular, ms=mouse}
+
+    //Estrutura básica de rrepeticão
+    var i = 0 // serve como contador
+
+    while (i < 10) {
+        println(i)
+
+        i++ // incrementa o contador
+    }
+    //Operadores para gerar o "ranges"(intervalos)
+    1 .. 5 // 1 a 5
+    1 until 5 // 1 a 5
+    5 downTo 1 //5 a 1
+    1 .. 10 step 2 // 1,3,5,7,9
+
+    //Estrutura de repeticão - for
+    for (i in 1 .. 5){
+        println(i)
+    }
+
+    val carro = listOf("corsa", "celta","celta")
+
+    for ( carro in carros ){
+        println( carro)
+    }
+
+    val carros1 = listOf("corsa", "celta", "fusca")
+
+    for ( indice in carros1.indices) {
+        println(indice)
+    } // imprime 0,1,2
+
+    val carros2 = listOf("Corsa", "Celta", "Fusca")
+
+    for ((indice, carros2) in carros2.withIndex()){
+        println("0 $carro está na posicão $indice")
+    }
+
+    val idade9 = 15
+
+    when (idade9) {
+        in 0 .. 12 -> println("Crianca")
+        in 13 .. 17 -> println("Adolescente")
+        in 18 .. 59 -> println("Adulto")
+        else -> println("Idoso")
+    }
+
 
     //Estruturas de decisao - else, if
     val idade2 = 18
