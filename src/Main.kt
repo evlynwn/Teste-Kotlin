@@ -215,7 +215,7 @@ fun main() {
     produtos.remove("pc")
     println(produtos) //{cl=celular, ms=mouse}
 
-    //Estrutura básica de rrepeticão
+    //Estrutura básica de repeticão
     var i = 0 // serve como contador
 
     while (i < 10) {
@@ -277,6 +277,8 @@ fun main() {
     }
 
     println(status1)
+
+
 
     fun mandaSalve(nome: String = "mano") {
         println("Salve $nome!")
